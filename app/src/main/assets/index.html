@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VTMIS FedRAMP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar overlay -->
+    <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <div class="shield-icon">&#128737;</div>
+            <h2>VTMIS FedRAMP</h2>
+            <p class="subtitle">Authorization Package</p>
+        </div>
+        <div class="sidebar-search">
+            <input type="text" id="searchInput" placeholder="Search documents..." oninput="filterDocs()">
+        </div>
+        <ul id="docList"></ul>
+        <div class="sidebar-footer">
+            <p>Vivo T2X 5G &bull; VTMIS-2026-001</p>
+            <p class="version">v1.0.0 &bull; March 9, 2026</p>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main id="main">
+        <header id="topbar">
+            <button id="menuBtn" onclick="toggleSidebar()" aria-label="Menu">&#9776;</button>
+            <h1 id="docTitle">VTMIS FedRAMP Package</h1>
+            <button id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">&#9790;</button>
+        </header>
+        <article id="content">
+            <div id="welcome">
+                <div class="welcome-icon">&#128737;</div>
+                <h1>VTMIS FedRAMP Authorization Package</h1>
+                <h3>Vivo T2X 5G Mobile Information System</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">17</div>
+                        <div class="stat-label">Documents</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">82.7%</div>
+                        <div class="stat-label">Compliance</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">27</div>
+                        <div class="stat-label">Findings</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Low</div>
+                        <div class="stat-label">Baseline ATO</div>
+                    </div>
+                </div>
+                <p class="welcome-hint">Select a document from the menu to begin reading.</p>
+            </div>
+        </article>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
