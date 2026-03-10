@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THADAM C3"
+        android:textColor="#8B949E"
+        android:textSize="10sp"
+        android:letterSpacing="0.2" />
+
+    <TextView
+        android:id="@+id/widgetTrustLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="—"
+        android:textColor="#FFC107"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/widgetScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="—%"
+        android:textColor="#E6EDF3"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/widgetTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#484F58"
+        android:textSize="9sp"
+        android:paddingTop="2dp" />
+
+</LinearLayout>

@@ -193,6 +193,37 @@ This Plan of Action and Milestones (POA&M) documents the known security weakness
 4. **Month 1 (Mar 31):** Complete MDM enrollment, establish centralized logging, finalize all Moderate items
 5. **Month 2 (Apr 30):** Resolve all remaining items, re-assess
 
+## 5. THADAM C3 GATE — AUTOMATED MONITORING
+
+The Thadam C3 Gate Adaptive Trust Architecture (v3.0) has been deployed to provide continuous automated monitoring of all 27 POA&M items. The system provides:
+
+### 5.1 Real-Time Trust Evaluation
+- **6 C3 Gates** (Network → Access → Storage → Execution → Process → Transmission) evaluate 22 security signals every 30 seconds
+- **CIA Triad Scoring** — Confidentiality, Integrity, and Availability dimensions feed into a global trust score
+- **Trust Levels** — GREEN (≥85%), YELLOW (≥70%), ORANGE (≥50%), RED (<50%)
+
+### 5.2 POA&M Item Mapping
+
+| Gate | POA&M Items Monitored | Key Signals |
+|---|---|---|
+| GATE-1 (Network) | POA&M-CRIT-002, POA&M-MOD-007 | VPN status, Wi-Fi security, DNS encryption |
+| GATE-2 (Access) | POA&M-HIGH-001, POA&M-HIGH-002, POA&M-MOD-001 | USB debug, MDM enrollment, screen lock |
+| GATE-3 (Storage) | POA&M-HIGH-003, POA&M-MOD-003 | Encryption status, storage capacity, DLP |
+| GATE-4 (Execution) | POA&M-HIGH-004, POA&M-MOD-006 | App allowlisting, sideloading, supply chain |
+| GATE-5 (Process) | POA&M-MOD-002, POA&M-MOD-005 | App permissions, background processes |
+| GATE-6 (Transmission) | POA&M-MOD-004, POA&M-LOW-002 | Bluetooth, NFC, certificate pinning |
+
+### 5.3 Remediation Tracking
+- Thadam dashboard provides one-tap remediation actions that open system settings for each finding
+- Trust history is stored in a local Room database for trend analysis
+- Alert notifications fire automatically when trust level degrades
+- HTML compliance reports can be exported and shared with stakeholders
+
+### 5.4 Multi-Device Support
+- Thadam v3.0 dynamically detects device manufacturer, model, SoC, security patch level, and supply chain risk
+- Works on any Android device (API 24+) — not limited to Vivo T2X 5G
+- Supply chain risk automatically adjusts based on manufacturer origin
+
 ---
 
 **Document Control**
@@ -200,6 +231,7 @@ This Plan of Action and Milestones (POA&M) documents the known security weakness
 | Version | Date | Author | Changes |
 |---|---|---|---|
 | 1.0 | March 9, 2026 | AAKASH | Initial POA&M based on SAR findings |
+| 2.0 | March 9, 2026 | AAKASH | Added Section 5: Thadam C3 Gate automated monitoring integration |
 
 ---
 

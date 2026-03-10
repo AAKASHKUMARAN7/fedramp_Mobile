@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1117"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBackGate"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="← BACK"
+                android:textColor="#58A6FF" />
+
+            <TextView
+                android:id="@+id/tvGateTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="GATE DETAIL"
+                android:textColor="#E6EDF3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Gate Score Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#161B22"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvGateDecisionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ALLOW"
+                    android:textColor="#4CAF50"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvGateScoreDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trust Score: 0.000"
+                    android:textColor="#E6EDF3"
+                    android:textSize="14sp"
+                    android:paddingTop="4dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressGateScore"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="8dp"
+                    android:max="100"
+                    android:progressDrawable="@drawable/trust_progress" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- C3 Breakdown -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#161B22"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C3 EVALUATION"
+                    android:textColor="#8B949E"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.15"
+                    android:paddingBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvC3Context"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Context:  0.00"
+                    android:textColor="#E6EDF3"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace" />
+
+                <TextView
+                    android:id="@+id/tvC3Control"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Control:  0.00"
+                    android:textColor="#E6EDF3"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"
+                    android:paddingTop="4dp" />
+
+                <TextView
+                    android:id="@+id/tvC3Carrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carrier:  0.00"
+                    android:textColor="#E6EDF3"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"
+                    android:paddingTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- SAR Findings -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAR FINDINGS MAPPED"
+            android:textColor="#8B949E"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:paddingBottom="8dp"
+            android:paddingTop="4dp" />
+
+        <LinearLayout
+            android:id="@+id/sarFindingsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <!-- Reasons -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EVALUATION REASONS"
+            android:textColor="#8B949E"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:paddingBottom="8dp"
+            android:paddingTop="16dp" />
+
+        <TextView
+            android:id="@+id/tvReasons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#7D8590"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:paddingBottom="8dp" />
+
+        <!-- Remediation for this gate -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REMEDIATION"
+            android:textColor="#8B949E"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp" />
+
+        <LinearLayout
+            android:id="@+id/gateRemediationContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>

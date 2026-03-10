@@ -349,3 +349,12 @@ function loadTheme() {
         document.getElementById("themeBtn").textContent = "\u2600";
     }
 }
+
+// Thadam Trust Dashboard bridge
+function openThadam() {
+    if (typeof ThadamBridge !== "undefined" && ThadamBridge.openDashboard) {
+        ThadamBridge.openDashboard();
+    } else {
+        alert("Thadam C3 Trust Dashboard is available in the Android app.");
+    }
+}

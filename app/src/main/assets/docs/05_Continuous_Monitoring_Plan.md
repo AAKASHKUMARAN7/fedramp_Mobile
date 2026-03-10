@@ -238,11 +238,31 @@ Template:
 
 ---
 
+## APPENDIX: THADAM C3 GATE INTEGRATION
+
+The Thadam C3 Gate system (v3.0) now provides the primary automated continuous monitoring capability for VTMIS. It implements the monitoring requirements defined above through:
+
+| Monitoring Requirement | Thadam Implementation |
+|---|---|
+| 30-second scan interval | ThadamService evaluates all 6 gates every 30s |
+| CIA scoring & trust levels | CIAAgent computes Confidentiality, Integrity, Availability from 22 signals |
+| Historical trend tracking | Room database stores up to 2,000 trust snapshots with line chart visualization |
+| Alert notifications | Android notifications fire on trust level degradation |
+| Compliance reporting | HTML reports exported via share intent with full device/gate/signal detail |
+| Multi-device support | DeviceProfiler dynamically detects device specs on any Android phone (API 24+) |
+| Home screen widget | TrustWidgetProvider shows current trust level without opening the app |
+| Remediation actions | Dashboard provides one-tap settings links for each finding |
+
+All metrics (MET-01 through MET-08) are evaluated as part of the Thadam gate chain, with scores propagated through the CIA triad and C3 evaluation pipeline.
+
+---
+
 **Document Control**
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
 | 1.0 | March 9, 2026 | AAKASH | Initial Continuous Monitoring Plan |
+| 2.0 | March 9, 2026 | AAKASH | Added Thadam C3 Gate v3.0 integration appendix |
 
 ---
 
